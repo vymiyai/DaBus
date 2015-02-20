@@ -12,6 +12,18 @@ var Game = function()
     // contains an instance of a service bus.
     this.ESB    =   new EnterpriseServiceBus();
     
+    // convenience method that delegates the registration of a component into the ESB.
+    this.register   = function( component )
+    {
+        this.ESB.register( component );
+    };
+    
+    // convenience method that delegates the escalation of a request.
+    this.request    = function( operation, args )
+    {
+        this.ESB.request( operation, args );
+    };
+    
     // setter for a new state.
     this.setState   = function( state )
     {

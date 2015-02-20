@@ -22,6 +22,10 @@ var MainMenu = function()
     this.run        = function( game )
     {
         alert( "MAIN MENU" );
+        game.request( "add", [] );
+        game.request( "add", [] );
+        game.request( "add", [] );
+        game.request( "add", [] );
         game.setState( new Quit() );
     };
 };

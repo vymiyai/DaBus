@@ -22,6 +22,7 @@ var StartUp = function()
     this.run        = function( game )
     {
         alert( "START UP" );
+        game.register( new Stage() );
         game.setState( new MainMenu() );
     };
 };

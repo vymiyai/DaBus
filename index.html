@@ -8,6 +8,7 @@
         <script src='lib/createjs-2014.12.12.min.js'></script>
         <script src='src/EnterpriseServiceBus.js'></script>
         <script src='src/Game.js'></script>
+        <script src='src/Components/Stage.js'></script>
         <script src='src/GameStates/MainMenu.js'></script>
         <script src='src/GameStates/End.js'></script>
         <script src='src/GameStates/StartUp.js'></script>
@@ -22,11 +23,6 @@
         <script>
             var init = function() 
             {
-                // instantiate the stage.
-                var stage = new createjs.Stage( "STAGE" );
-                stage.canvas.width  = window.innerWidth; 
-                stage.canvas.height = window.innerHeight;
-                
                 // will instantiate the Game object and itrate through its states.
                 var game    = new Game();
                 
