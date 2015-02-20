@@ -19,6 +19,9 @@ var EnterpriseServiceBus = function()
             else
                 throw "An existing component already deals with this operation!";
         }
+        
+        // set ESB reference for chaining.
+        this.components[ operation ].setESB( this );
     };
     
     // dispatches the execution of an operation to the responsible component.
@@ -27,8 +30,16 @@ var EnterpriseServiceBus = function()
         // retrieve the component that performs the requested operation.
         var component   = this.components[ operation ];
         
-        // call the operation with the given arguments.                         // TODO USAR RETORNO
-        var result      = component[ operation ]( args );
+        // check if there is a component responsible to perform the operation.
+        if( typeof component === 'undefined' )
+        {
+            throw "There is no component assigned to execute operation:" + operation;
+        }
+        else
+        {
+            // call the operation with the given arguments.                         // TODO USAR RETORNO...
+            var result      = component[ operation ]( args );
+        }
         
         return result;
     };

@@ -23,6 +23,7 @@ var StartUp = function()
     {
         alert( "START UP" );
         game.register( new Stage() );
+        game.register( new MainMenuButtonFactory() );
         game.setState( new MainMenu() );
     };
 };
