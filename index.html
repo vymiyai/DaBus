@@ -1,0 +1,44 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+      	<meta charset="UTF-8" />
+      	<meta name="viewport" content="width=device-width, height=device-height, user-scalable=no" />
+      	
+        <title>Da Bus Project</title>
+        <script src='lib/createjs-2014.12.12.min.js'></script>
+        <script src='src/EnterpriseServiceBus.js'></script>
+        <script src='src/Game.js'></script>
+        <script src='src/GameStates/MainMenu.js'></script>
+        <script src='src/GameStates/End.js'></script>
+        <script src='src/GameStates/StartUp.js'></script>
+        <script src='src/GameStates/Quit.js'></script>
+    </head>
+    
+    <body style="margin: 0px;" onLoad="init();">
+        <canvas id="STAGE" width="600" height="800" style="background-color: black;">
+            Your Webkit version is not compatible with canvas...
+        </canvas>
+        
+        <script>
+            var init = function() 
+            {
+                // instantiate the stage.
+                var stage = new createjs.Stage( "STAGE" );
+                stage.canvas.width  = window.innerWidth; 
+                stage.canvas.height = window.innerHeight;
+                
+                // will instantiate the Game object and itrate through its states.
+                var game    = new Game();
+                
+                // iterates until ordered to quit.
+                do
+                {
+                    game.run();
+                }
+                while( game.getState().getName() != "END" );
+                
+                alert( "EXECUTION FINISHED!" );
+            };
+      	</script>
+    </body>
+</html>
