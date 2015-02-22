@@ -43,8 +43,7 @@ var MainMenuButtonFactory = function()
         
         container.addChild( label );
         
-        //this.ESB.request( "setMainMenuButtonPositioning", { "label":text, "displayObject":container } );
-        this.ESB.request( "addShape", { displayObject:container } )
+        this.ESB.request( "positionMainMenuButton", { "label":text, "displayObject":container } );
     };
     
     // setter for the Enterprise Service Bus reference.

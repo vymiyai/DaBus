@@ -22,7 +22,7 @@ var MainMenu = function()
     this.run        = function( game )
     {
         alert( "MAIN MENU" );
-        game.request( "addMainMenuButton", {  label:"WOLOLO" } );
+        game.request( "addMainMenuButton", {  label:"QUIT" } );
         game.setState( new Quit() );
     };
 };
