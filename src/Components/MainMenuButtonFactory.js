@@ -36,13 +36,14 @@ var MainMenuButtonFactory = function()
         container.addChild( button );
         
         // instantiate the label.
-        var label           = new createjs.Text( text );
-        label.color         = LABEL_COLOR;
-        label.x             = -label.getMeasuredWidth()/2;
-        label.y             = -label.getMeasuredHeight()/2;
+        var buttonLabel           = new createjs.Text( text );
+        buttonLabel.color         = LABEL_COLOR;
+        buttonLabel.x             = -buttonLabel.getMeasuredWidth()/2;
+        buttonLabel.y             = -buttonLabel.getMeasuredHeight()/2;
         
-        container.addChild( label );
+        container.addChild( buttonLabel );
         
+        // pass button to next component.
         this.ESB.request( "positionMainMenuButton", { "label":text, "displayObject":container } );
     };
     

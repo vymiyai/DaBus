@@ -37,7 +37,7 @@ var EnterpriseServiceBus = function()
         }
         else
         {
-            // call the operation with the given arguments.                         // TODO USAR RETORNO...
+            // call the operation with the given arguments.
             var result      = component[ operation ]( args );
         }
         

@@ -24,6 +24,5 @@ var MainMenu = function()
         game.request( "addMainMenuButton", {  label:"NEW GAME" } );
         game.request( "addMainMenuButton", {  label:"LOAD GAME" } );
         game.request( "addMainMenuButton", {  label:"QUIT" } );
-        game.setState( new Quit() );
     };
 };

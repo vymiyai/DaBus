@@ -19,7 +19,6 @@ var Stage = function()
     {
         this.stage.addChild( args.displayObject );
         this.stage.update();
-        return true;
     };
     
     // setter for the Enterprise Service Bus reference.

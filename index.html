@@ -11,6 +11,7 @@
         <script src='src/Components/Stage.js'></script>
         <script src='src/Components/MainMenuButtonFactory.js'></script>
         <script src='src/Components/MainMenuButtonPositioner.js'></script>
+        <script src='src/Components/MainMenuButtonListener.js'></script>
         <script src='src/GameStates/MainMenu.js'></script>
         <script src='src/GameStates/End.js'></script>
         <script src='src/GameStates/StartUp.js'></script>
@@ -27,13 +28,7 @@
             {
                 // will instantiate the Game object and itrate through its states.
                 var game    = new Game();
-                
-                // iterates until ordered to quit.
-                do
-                {
-                    game.run();
-                }
-                while( game.getState().getName() != "END" );
+                game.run();
             };
       	</script>
     </body>

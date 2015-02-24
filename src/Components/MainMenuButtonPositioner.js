@@ -15,7 +15,7 @@ var MainMenuButtonPositioner = function()
     // reference to the ESB.
     this.ESB                    = null;    
     
-    // instantiates a base main menu button.
+    // positions a main menu button to its assigned coordinates.
     this.positionMainMenuButton = function( args )
     {
         var label   = args.label;
@@ -23,14 +23,15 @@ var MainMenuButtonPositioner = function()
         
         if( typeof this.positions[ label ] === "undefined" )
         {
-            throw "no positioning data is available for the main menu button " + label;
+            throw "No positioning data is available for the main menu button " + label;
         }
         else
         {
             button.x   = this.positions[ label ].x;
             button.y   = this.positions[ label ].y;
             
-            this.ESB.request( "addShape", { displayObject:button } )
+            // pass button to next component.
+            this.ESB.request( "addMainMenuButtonListener", { "label":label, "displayObject":button } );
         }
     };
     

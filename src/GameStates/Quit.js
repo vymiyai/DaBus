@@ -21,6 +21,7 @@ var Quit = function()
     // shows the main menu.
     this.run        = function( game )
     {
-        game.setState( new End() );
+        alert( "Running quit state..." );
+        game.setState( new End() );                                             // pode ser um estado desnecessario.
     };
 };
