@@ -17,7 +17,6 @@ var Stage = function()
     // adds a displayObject into the stage.
     this.addShape = function( args )
     {
-        alert( "ADD!" );
         this.stage.addChild( args.displayObject );
         this.stage.update();
         return true;

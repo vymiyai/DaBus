@@ -21,7 +21,6 @@ var StartUp = function()
     // makes all necessary initializations for the game before transcending to the menu state.
     this.run        = function( game )
     {
-        alert( "START UP" );
         game.register( new Stage() );
         game.register( new MainMenuButtonFactory() );
         game.register( new MainMenuButtonPositioner() );

@@ -21,7 +21,6 @@ var Quit = function()
     // shows the main menu.
     this.run        = function( game )
     {
-        alert( "QUIT" );
         game.setState( new End() );
     };
 };

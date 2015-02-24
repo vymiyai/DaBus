@@ -21,7 +21,8 @@ var MainMenu = function()
     // shows the main menu.
     this.run        = function( game )
     {
-        alert( "MAIN MENU" );
+        game.request( "addMainMenuButton", {  label:"NEW GAME" } );
+        game.request( "addMainMenuButton", {  label:"LOAD GAME" } );
         game.request( "addMainMenuButton", {  label:"QUIT" } );
         game.setState( new Quit() );
     };

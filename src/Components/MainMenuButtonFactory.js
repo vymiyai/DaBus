@@ -8,8 +8,8 @@ var MainMenuButtonFactory = function()
     var STROKE_COLOR    = "black";
     var FILL_COLOR      = "gray";
     var LABEL_COLOR     = "white";
-    var WIDTH           = 500;
-    var HEIGHT          = 200;
+    var WIDTH           = 200;
+    var HEIGHT          = 40;
     
     // accepted operations that this component can perform.
     this.operations         = [ "addMainMenuButton" ];
