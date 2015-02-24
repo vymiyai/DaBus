@@ -16,9 +16,29 @@ var Stage = function()
     };
     
     // instantiate the stage. STAGE is the ID of the HTML canvas element.
-    this.stage                  = new createjs.Stage( "STAGE" );
-    this.stage.canvas.width     = window.innerWidth; 
-    this.stage.canvas.height    = window.innerHeight;
+    var stage               = new createjs.Stage( "STAGE" );
+    
+    // set stage dimensions.
+    stage.canvas.width      = window.innerWidth; 
+    stage.canvas.height     = window.innerHeight;
+    
+    // set desired FPS.
+    createjs.Ticker.setFPS( 30 );
+
+    // update canvas a each tick.
+    var tick = function( evt )
+    {
+        stage.update( evt );
+    };
+    createjs.Ticker.addEventListener( "tick", tick );
+
+    // enable touch events.
+    createjs.Touch.enable( stage );
+
+    // to get onMouseOver & onMouseOut events, we need to enable them on the stage.
+    stage.enableMouseOver();
+    
+    this.stage  = stage;
     
     // adds a displayObject into the stage.
     this.addShape = function( args )
