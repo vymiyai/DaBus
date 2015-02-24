@@ -13,7 +13,13 @@ var MainMenuButtonListener = function( game )
     this.operations         = [ "addMainMenuButtonListener" ];
     
     // reference to the ESB.
-    this.ESB                = null;    
+    this.ESB                = null;
+    
+    // setter for the Enterprise Service Bus reference.
+    this.setESB = function( esb )
+    {
+        this.ESB = esb;
+    };
     
     // reference to the game object.
     this.game               = game;
@@ -36,11 +42,5 @@ var MainMenuButtonListener = function( game )
             // pass button to next component.
             this.ESB.request( "addShape", { "label":label, "displayObject":button } );
         }
-    };
-    
-    // setter for the Enterprise Service Bus reference.
-    this.setESB = function( esb )
-    {
-        this.ESB = esb;
     };
 };

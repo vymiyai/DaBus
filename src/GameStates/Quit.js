@@ -22,6 +22,5 @@ var Quit = function()
     this.run        = function( game )
     {
         alert( "Running quit state..." );
-        game.setState( new End() );                                             // pode ser um estado desnecessario.
     };
 };

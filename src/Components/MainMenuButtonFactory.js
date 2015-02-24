@@ -15,7 +15,13 @@ var MainMenuButtonFactory = function()
     this.operations         = [ "addMainMenuButton" ];
     
     // reference to the ESB.
-    this.ESB                    = null;    
+    this.ESB                    = null;
+    
+    // setter for the Enterprise Service Bus reference.
+    this.setESB = function( esb )
+    {
+        this.ESB = esb;
+    };
     
     // instantiates a base main menu button.
     this.addMainMenuButton   = function( args )
@@ -45,11 +51,5 @@ var MainMenuButtonFactory = function()
         
         // pass button to next component.
         this.ESB.request( "positionMainMenuButton", { "label":text, "displayObject":container } );
-    };
-    
-    // setter for the Enterprise Service Bus reference.
-    this.setESB = function( esb )
-    {
-        this.ESB = esb;
     };
 };

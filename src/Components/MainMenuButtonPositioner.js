@@ -13,7 +13,13 @@ var MainMenuButtonPositioner = function()
     this.operations         = [ "positionMainMenuButton" ];
     
     // reference to the ESB.
-    this.ESB                    = null;    
+    this.ESB                    = null;
+    
+    // setter for the Enterprise Service Bus reference.
+    this.setESB = function( esb )
+    {
+        this.ESB = esb;
+    };
     
     // positions a main menu button to its assigned coordinates.
     this.positionMainMenuButton = function( args )
@@ -33,11 +39,5 @@ var MainMenuButtonPositioner = function()
             // pass button to next component.
             this.ESB.request( "addMainMenuButtonListener", { "label":label, "displayObject":button } );
         }
-    };
-    
-    // setter for the Enterprise Service Bus reference.
-    this.setESB = function( esb )
-    {
-        this.ESB = esb;
     };
 };

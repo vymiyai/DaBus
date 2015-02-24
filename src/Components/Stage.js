@@ -9,6 +9,12 @@ var Stage = function()
     // reference to the ESB.
     this.ESB                    = null;
     
+    // setter for the Enterprise Service Bus reference.
+    this.setESB = function( esb )
+    {
+        this.ESB = esb;
+    };
+    
     // instantiate the stage. STAGE is the ID of the HTML canvas element.
     this.stage                  = new createjs.Stage( "STAGE" );
     this.stage.canvas.width     = window.innerWidth; 
@@ -19,11 +25,5 @@ var Stage = function()
     {
         this.stage.addChild( args.displayObject );
         this.stage.update();
-    };
-    
-    // setter for the Enterprise Service Bus reference.
-    this.setESB = function( esb )
-    {
-        this.ESB = esb;
     };
 };
