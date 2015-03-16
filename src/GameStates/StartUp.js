@@ -25,6 +25,7 @@ var StartUp = function()
         game.register( new MainMenuButtonFactory() );
         game.register( new MainMenuButtonPositioner() );
         game.register( new MainMenuButtonListener( game ) );
+        game.register( new MainMenuButtonAnimator() );
         game.setState( new MainMenu() );
         game.run();
     };

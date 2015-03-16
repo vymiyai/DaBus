@@ -38,9 +38,6 @@ var MainMenuButtonListener = function( game )
         {
             // set the event listener to the button.
             button.on( "click", this.listeners[ label ], this, false );
-            
-            // pass button to next component.
-            this.ESB.request( "addShape", { "label":label, "displayObject":button } );
         }
     };
 };

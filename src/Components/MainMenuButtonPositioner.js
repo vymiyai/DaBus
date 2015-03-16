@@ -37,7 +37,7 @@ var MainMenuButtonPositioner = function()
             button.y   = this.positions[ label ].y;
             
             // pass button to next component.
-            this.ESB.request( "addMainMenuButtonListener", { "label":label, "displayObject":button } );
+            this.ESB.request( "animateMainMenuButton", { "label":label, "displayObject":button } );
         }
     };
 };
