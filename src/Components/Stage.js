@@ -4,7 +4,7 @@
 var Stage = function()
 {
     // accepted operations that this component can perform.
-    this.operations             = ["addShape"];
+    this.operations             = [ "addShape", "clearScreen" ];
     
     // reference to the ESB.
     this.ESB                    = null;
@@ -46,4 +46,11 @@ var Stage = function()
         this.stage.addChild( args.displayObject );
         this.stage.update();
     };
+    
+    // erases all display objects on stage.
+    this.clearScreen = function( args )
+    {
+        this.stage.removeAllChildren();
+    };
+    
 };

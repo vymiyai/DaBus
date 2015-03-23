@@ -21,6 +21,6 @@ var Quit = function()
     // shows the main menu.
     this.run        = function( game )
     {
-        alert( "Running quit state..." );
+        game.request( "clearScreen", {} );
     };
 };
