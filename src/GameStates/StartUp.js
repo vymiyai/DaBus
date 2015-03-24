@@ -22,6 +22,7 @@ var StartUp = function()
     this.run        = function( game )
     {
         game.register( new Stage() );
+        game.register( new Flagger() );
         game.register( new MainMenuButtonFactory() );
         game.register( new MainMenuButtonPositioner() );
         game.register( new MainMenuButtonListener( game ) );

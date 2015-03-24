@@ -4,10 +4,32 @@
 var MainMenuButtonListener = function( game )
 {
     // listeners.
-    this.listeners                  = {};
-    this.listeners[ "NEW GAME" ]    = function( evt, data ){ alert( "NEW GAME!" ); };
-    this.listeners[ "LOAD GAME" ]   = function( evt, data ){ alert( "LOAD GAME!" ); };
-    this.listeners[ "QUIT" ]        = function( evt, data ){ this.game.setState( new Quit() ); this.game.run(); };
+    this.listeners = {};
+    this.listeners[ "NEW GAME" ] = function( evt, data )
+    { 
+        if( this.game.request( "get", { flag:"mainMenu" } ) )
+        {
+            this.game.request( "off", { flag:"mainMenu" } ); 
+            alert( "Main Menu disabled!" );
+        }
+    };
+    this.listeners[ "LOAD GAME" ] = function( evt, data )
+    { 
+        if( this.game.request( "get", { flag:"mainMenu" } ) )
+        {
+            this.game.request( "off", { flag:"mainMenu" } );
+            alert( "Main menu disabled!" );
+        }
+    };
+    this.listeners[ "QUIT" ] = function( evt, data )
+    {
+        if( this.game.request( "get", { flag:"mainMenu" } ) )
+        {
+            this.game.request( "off", { flag:"mainMenu" } ); 
+            this.game.setState( new Quit() ); 
+            this.game.run();
+        }
+    };
     
     // accepted operations that this component can perform.
     this.operations         = [ "addMainMenuButtonListener" ];
@@ -22,7 +44,7 @@ var MainMenuButtonListener = function( game )
     };
     
     // reference to the game object.
-    this.game               = game;
+    this.game = game;
     
     // adds a click listener to the button based on its label.
     this.addMainMenuButtonListener = function( args )

@@ -21,7 +21,7 @@ var Game = function()
     // convenience method that delegates the escalation of a request.
     this.request    = function( operation, args )
     {
-        this.ESB.request( operation, args );
+        return this.ESB.request( operation, args );
     };
     
     // setter for a new state.
