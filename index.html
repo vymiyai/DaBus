@@ -14,6 +14,8 @@
         <script src='src/Components/MainMenuButtonPositioner.js'></script>
         <script src='src/Components/MainMenuButtonListener.js'></script>
         <script src='src/Components/Flagger.js'></script>
+        
+        <script src='src/GameStates/Empty.js'></script>
         <script src='src/GameStates/MainMenu.js'></script>
         <script src='src/GameStates/StartUp.js'></script>
         <script src='src/GameStates/Quit.js'></script>
@@ -29,7 +31,7 @@
             {
                 // instantiate the game object and run it.
                 var game    = new Game();
-                game.run();
+                game.runState( new StartUp() );
             };
       	</script>
     </body>

@@ -7,7 +7,7 @@ var Game = function()
     this.stateName  = "START UP";
     
     // the instance of the current state.
-    this.state  =   new StartUp();
+    this.state  =  new Empty();
     
     // contains an instance of a service bus.
     this.ESB    =   new EnterpriseServiceBus();
@@ -37,9 +37,11 @@ var Game = function()
         return this.state;
     };
     
-    // runs the script defined in the current state.
-    this.run        = function()
+    // runs the script defined in the current state after dismissing the brevious state.
+    this.runState   = function( state )
     {
+        this.state.dismiss();
+        this.setState( state );
         this.state.run( this );
     };
 };

@@ -18,6 +18,12 @@ var MainMenu = function()
         this.state  = state;
     };
     
+    // the method called when the state is dismissed.
+    this.dismiss    = function()
+    {
+        
+    };
+    
     // shows the main menu.
     this.run        = function( game )
     {

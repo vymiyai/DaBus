@@ -1,10 +1,10 @@
 "use strict";
 
-// the state class responsible for disallocating everything before the game closes.
-var Quit = function()
+// an empty state.
+var Empty = function()
 {
     // the name of this state.
-    this.name       = "QUIT";
+    this.name       = "EMPTY";
     
     // getter for this state's name.
     this.getName    = function()
@@ -18,15 +18,15 @@ var Quit = function()
         this.state  = state;
     };
     
-    // the method called when the state is dismissed.
+    // do nothing when dismissed.
     this.dismiss    = function()
     {
         
     };
     
-    // shows the main menu.
+    // do nothing.
     this.run        = function( game )
     {
-        game.request( "clearScreen", {} );
+        
     };
 };

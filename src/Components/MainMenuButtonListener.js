@@ -26,8 +26,7 @@ var MainMenuButtonListener = function( game )
         if( this.game.request( "get", { flag:"mainMenu" } ) )
         {
             this.game.request( "off", { flag:"mainMenu" } ); 
-            this.game.setState( new Quit() ); 
-            this.game.run();
+            this.game.runState( new Quit() );
         }
     };
     

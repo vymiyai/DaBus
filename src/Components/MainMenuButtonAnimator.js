@@ -15,7 +15,7 @@ var MainMenuButtonAnimator = function()
         this.ESB = esb;
     };
     
-    // positions a main menu button to its assigned coordinates.
+    // assigns an animation and its callback to a button.
     this.animateMainMenuButton = function( args )
     {
         var label   = args.label;

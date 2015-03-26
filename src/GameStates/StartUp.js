@@ -18,6 +18,12 @@ var StartUp = function()
         this.state  = state;
     };
     
+    // the method called when the state is dismissed.
+    this.dismiss    = function()
+    {
+        
+    };
+    
     // makes all necessary initializations for the game before transcending to the menu state.
     this.run        = function( game )
     {
@@ -27,7 +33,6 @@ var StartUp = function()
         game.register( new MainMenuButtonPositioner() );
         game.register( new MainMenuButtonListener( game ) );
         game.register( new MainMenuButtonAnimator() );
-        game.setState( new MainMenu() );
-        game.run();
+        game.runState( new MainMenu() );
     };
 };
